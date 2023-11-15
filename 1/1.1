@@ -1,0 +1,42 @@
+#include <iostream>
+#include <unordered_map>
+#include <string>
+#include <iomanip>
+#include "class_creator.h"
+
+using namespace std;
+ 
+
+bool eqmatrix(const matrix a, const matrix n){
+        bool h;
+        for(int i = 0; i < 1; i++){
+            for(int j = 0; j < 2; j++){
+                if(a[i][j] == n[i][j]){
+                a = true;
+                }
+                else
+                n = false;
+            }
+        }
+        cout << h;
+        return h;
+    }
+ 
+int main() {
+    int r, r1;
+    cin >> r;
+    cin >> r1;
+    matrix n;
+    matrix a;
+    try{
+        n.Matrix_input(r, r1);
+        a.Matrix_input(r1, r);
+    }
+    catch(string&){
+        r++;
+        r1++;
+        n.Matrix_input(r, r1);
+        return 0;
+    }
+    eqmatrix(a, n);
+}
